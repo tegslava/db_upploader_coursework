@@ -21,7 +21,7 @@
         <!--property key="REPORTER_CHARSET_NAME">UTF-8</property-->
         <property key="WITH_HEADER">Y</property>
         <property key="COLUMN_SEPARATOR">;</property>
-        <property key="THREADS_COUNT">4</property>
+        <property key="THREADS_COUNT">2</property>
         <property key="QUEUE_CAPACITY">1000000</property>
     </properties>
 </app-settings>
