@@ -1,0 +1,27 @@
+<?xml version = '1.0'?>
+<app-settings>
+    <properties>
+        <property key="url">jdbc:postgresql://localhost:5432/db_tests</property>
+        <property key="sql">select
+            c.short_name client,
+            ac.contract_number pan,
+            ac.account ,
+            c.city || ', ' || c.address address,
+            '+7'||replace(substr(c.phone,3), '-','') phone ,
+            c."e-mail",
+            trunc(1.14 * cos(c.id) * sin(ac.id * 0.2) * cos(ac.id / 1.2)*1000000) trans_amount
+            from acnt_contract2 ac,
+            clients  c
+            where
+            ac.client_id  = c.id
+            and mod(ac.id, ?) = ?</property>
+        <property key="reportFileName">report.csv</property>
+        <property key="reportFormat">csv</property>
+        <property key="reportCharSetName">windows-1251</property>
+        <!--property key="reportCharSetName">UTF-8</property-->
+        <property key="reportWithHeader">Y</property>
+        <property key="reportColumnSeparator">;</property>
+        <property key="threadsCount">4</property>
+        <property key="queueCapacity">100000</property>
+    </properties>
+</app-settings>
