@@ -35,11 +35,10 @@ public class AppSettings implements ReLoadable {
         load();
     }
 
-    public static AppSettings getInstance(SettingsType settingsSourceType, String fileName) {
+    public static void init(SettingsType settingsSourceType, String fileName) {
         if (appSettings == null) {
             appSettings = new AppSettings(settingsSourceType, fileName);
         }
-        return appSettings;
     }
 
     /**
@@ -56,6 +55,16 @@ public class AppSettings implements ReLoadable {
         } else {
             return value;
         }
+    }
+
+    /**
+     * Метод чтения текстового значения параметра key
+     *
+     * @param key имя параметра
+     * @return значение параметра
+     */
+    public static String getString(String key) {
+        return getString(key, "");
     }
 
     /**
@@ -121,7 +130,7 @@ public class AppSettings implements ReLoadable {
 
     /**
      * Загрузка параметров программы из источника в хранилище. Тип источника определяется settingsSourceType.
-     * Дополнительно, для обеспечения безопасности, из строки запуска забираем логин и пароль подключения к БД
+     * Дополнительно, для обеспечения безопасности, из строки запуска забираем логин и пароль подключения к БД.
      */
     @Override
     public void load() {
@@ -143,9 +152,8 @@ public class AppSettings implements ReLoadable {
                     throw new RuntimeException(e);
                 }
         }
-        putString("login", (String) System.getProperties().getOrDefault("login", "defautlLogin"));
-        putString("password", (String) System.getProperties().getOrDefault("password", "defautlPassword"));
-        putString("poisonPill", "POISON_PILL");
+        putString("LOGIN", (String) System.getProperties().getOrDefault("login", "defautlLogin"));
+        putString("PASSWORD", (String) System.getProperties().getOrDefault("password", "defautlPassword"));
         logger.info(String.format("Настройки загружены из файла: %s", fileName));
     }
 }

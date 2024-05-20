@@ -9,29 +9,24 @@ import java.sql.SQLException;
  * Класс-пул соединений
  */
 public class DBCPDataSource {
-
     private static final BasicDataSource ds = new BasicDataSource();
-    private static DBCPDataSource dBCPDataSource;
 
-    private DBCPDataSource(AppSettings appSettings) {
-        ds.setUrl(appSettings.getString("url", "jdbc:postgresql://localhost:5432/db_tests"));
-        ds.setUsername(appSettings.getString("login", "unknownLogin"));
-        ds.setPassword(appSettings.getString("password", "unknownPassword"));
+    static {
+        ds.setUrl(AppSettings.getString("URL"));
+        ds.setUsername(AppSettings.getString("LOGIN"));
+        ds.setPassword(AppSettings.getString("PASSWORD"));
         ds.setMinIdle(5);
         ds.setMaxIdle(10);
-        ds.setMaxOpenPreparedStatements(appSettings.getInt("threadsCount"));
+        ds.setMaxOpenPreparedStatements(AppSettings.getInt("THREADS_COUNT"));
     }
 
     /**
      * Метод получения нового соединения к БД
-     * @param appSettings настройки программы
+     *
      * @return возвращает соединение типа java.sql.Connection
      * @throws SQLException проблемы с открытием соединения
      */
-    public static Connection getConnection(AppSettings appSettings) throws SQLException {
-        if (dBCPDataSource == null) {
-            dBCPDataSource = new DBCPDataSource(appSettings);
-        }
+    public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
 }

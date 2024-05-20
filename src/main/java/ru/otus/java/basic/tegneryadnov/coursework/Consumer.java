@@ -7,7 +7,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.util.concurrent.BlockingQueue;
+
+import static ru.otus.java.basic.tegneryadnov.coursework.MainApp.rowsQueue;
+import static ru.otus.java.basic.tegneryadnov.coursework.MainApp.timeStart;
 
 /**
  * Класс читателя из очереди сообщений
@@ -15,24 +17,16 @@ import java.util.concurrent.BlockingQueue;
  * Открывает файл отчета на запись и построчно заполняет сообщениями из очереди
  */
 public class Consumer implements Runnable {
-    private final BlockingQueue<String> queue;
-    private final String POISON_PILL;
     private final BufferedWriter bufferedWriter;
-    private final String REPORT_FILE_NAME;
+    private final static String POISON_PILL = "POISON_PILL";
     private static final Logger logger = LogManager.getLogger(Consumer.class.getName());
-    private final long timeStart;
 
-    public Consumer(BlockingQueue<String> queue, AppSettings appSettings, long timeStart) {
-        this.queue = queue;
-        this.timeStart = timeStart;
-        POISON_PILL = appSettings.getString("poisonPill", "unknownPoisonPill");
-        String charsetName = appSettings.getString("reportCharSetName", "UTF-8");
-        REPORT_FILE_NAME = appSettings.getString("reportFileName", "report.csv");
+    public Consumer() {
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(REPORT_FILE_NAME, Charset.forName(charsetName)));
-            logger.info(String.format("Старт выгрузки в файл отчета: %s", REPORT_FILE_NAME));
+            bufferedWriter = new BufferedWriter(new FileWriter(AppSettings.getString("REPORT_FILE_NAME"), Charset.forName(AppSettings.getString("REPORTER_CHARSET_NAME"))));
+            logger.info(String.format("Старт выгрузки в файл отчета: %s", AppSettings.getString("REPORT_FILE_NAME")));
         } catch (IOException e) {
-            logger.error(String.format("Ошибка отрытия файла отчета: %s %s", REPORT_FILE_NAME, e));
+            logger.error(String.format("Ошибка отрытия файла отчета: %s %s", AppSettings.getString("REPORT_FILE_NAME"), e));
             throw new RuntimeException(e);
         }
     }
@@ -41,12 +35,12 @@ public class Consumer implements Runnable {
         try {
             int lineCounter = 0;
             while (true) {
-                String row = queue.take();
+                String row = rowsQueue.take();
                 if (row.equals(POISON_PILL)) {
-                    logger.info("Поступила команда: закончить чтение из очереди");
+                    logger.debug("Поступила команда: закончить чтение из очереди");
                     bufferedWriter.flush();
                     bufferedWriter.close();
-                    logger.info(String.format("Выгрузка в файл %s завершена.", REPORT_FILE_NAME));
+                    logger.info(String.format("Выгрузка в файл %s завершена.", AppSettings.getString("REPORT_FILE_NAME")));
                     logger.info(String.format("Выгружено записей: %d", lineCounter));
                     logger.debug(String.format("Время работы программы: %d", System.currentTimeMillis() / 1000 - timeStart));
                     return;
