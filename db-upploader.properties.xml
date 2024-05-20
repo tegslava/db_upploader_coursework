@@ -1,8 +1,8 @@
 <?xml version = '1.0'?>
 <app-settings>
     <properties>
-        <property key="url">jdbc:postgresql://localhost:5432/db_tests</property>
-        <property key="sql">select
+        <property key="URL">jdbc:postgresql://localhost:5432/db_tests</property>
+        <property key="SQL">select
             c.short_name client,
             ac.contract_number pan,
             ac.account ,
@@ -15,13 +15,13 @@
             where
             ac.client_id  = c.id
             and mod(ac.id, ?) = ?</property>
-        <property key="reportFileName">report.csv</property>
-        <property key="reportFormat">csv</property>
-        <property key="reportCharSetName">windows-1251</property>
-        <!--property key="reportCharSetName">UTF-8</property-->
-        <property key="reportWithHeader">Y</property>
-        <property key="reportColumnSeparator">;</property>
-        <property key="threadsCount">4</property>
-        <property key="queueCapacity">100000</property>
+        <property key="REPORT_FILE_NAME">report.csv</property>
+        <property key="REPORT_FORMAT">csv</property>
+        <property key="REPORTER_CHARSET_NAME">windows-1251</property>
+        <!--property key="REPORTER_CHARSET_NAME">UTF-8</property-->
+        <property key="WITH_HEADER">Y</property>
+        <property key="COLUMN_SEPARATOR">;</property>
+        <property key="THREADS_COUNT">2</property>
+        <property key="QUEUE_CAPACITY">1000000</property>
     </properties>
 </app-settings>

@@ -1,46 +1,28 @@
-INFO  2024-05-20 13:57:27 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:149) - РќР°СЃС‚СЂРѕР№РєРё Р·Р°РіСЂСѓР¶РµРЅС‹ РёР· С„Р°Р№Р»Р°: db-upploader.properties.xml
-INFO  2024-05-20 13:57:27 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:33) - РЎС‚Р°СЂС‚ РІС‹РіСЂСѓР·РєРё РІ С„Р°Р№Р» РѕС‚С‡РµС‚Р°: report.csv
-INFO  2024-05-20 13:57:35 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - РџРѕС‚РѕРєРѕРј 1 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
-INFO  2024-05-20 13:57:35 [pool-2-thread-4] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - РџРѕС‚РѕРєРѕРј 4 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
-INFO  2024-05-20 13:57:35 [pool-2-thread-2] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - РџРѕС‚РѕРєРѕРј 2 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
-INFO  2024-05-20 13:57:36 [pool-2-thread-3] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - РџРѕС‚РѕРєРѕРј 3 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
-INFO  2024-05-20 13:57:36 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:92) - РџРѕС‚РѕРєРё Р·Р°РїСЂРѕСЃРѕРІ Р·Р°РІРµСЂС€РµРЅС‹
-INFO  2024-05-20 13:57:36 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:46) - РџРѕСЃС‚СѓРїРёР»Р° РєРѕРјР°РЅРґР°: Р·Р°РєРѕРЅС‡РёС‚СЊ С‡С‚РµРЅРёРµ РёР· РѕС‡РµСЂРµРґРё
-INFO  2024-05-20 13:57:36 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:49) - Р’С‹РіСЂСѓР·РєР° РІ С„Р°Р№Р» report.csv Р·Р°РІРµСЂС€РµРЅР°.
-INFO  2024-05-20 13:57:36 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:50) - Р’С‹РіСЂСѓР¶РµРЅРѕ Р·Р°РїРёСЃРµР№: 500001
-DEBUG 2024-05-20 13:57:36 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:51) - Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹: 11
-INFO  2024-05-20 14:05:36 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:149) - РќР°СЃС‚СЂРѕР№РєРё Р·Р°РіСЂСѓР¶РµРЅС‹ РёР· С„Р°Р№Р»Р°: db-upploader.properties.xml
-INFO  2024-05-20 14:05:36 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:33) - РЎС‚Р°СЂС‚ РІС‹РіСЂСѓР·РєРё РІ С„Р°Р№Р» РѕС‚С‡РµС‚Р°: report.csv
-INFO  2024-05-20 14:05:45 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - РџРѕС‚РѕРєРѕРј 1 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 500000
-INFO  2024-05-20 14:05:45 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:92) - РџРѕС‚РѕРєРё Р·Р°РїСЂРѕСЃРѕРІ Р·Р°РІРµСЂС€РµРЅС‹
-INFO  2024-05-20 14:05:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:46) - РџРѕСЃС‚СѓРїРёР»Р° РєРѕРјР°РЅРґР°: Р·Р°РєРѕРЅС‡РёС‚СЊ С‡С‚РµРЅРёРµ РёР· РѕС‡РµСЂРµРґРё
-INFO  2024-05-20 14:05:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:49) - Р’С‹РіСЂСѓР·РєР° РІ С„Р°Р№Р» report.csv Р·Р°РІРµСЂС€РµРЅР°.
-INFO  2024-05-20 14:05:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:50) - Р’С‹РіСЂСѓР¶РµРЅРѕ Р·Р°РїРёСЃРµР№: 500001
-DEBUG 2024-05-20 14:05:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:51) - Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹: 12
-INFO  2024-05-20 14:08:43 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:149) - Настройки загружены из файла: db-upploader.properties.xml
-INFO  2024-05-20 14:08:43 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:33) - Старт выгрузки в файл отчета: report.csv
-ERROR 2024-05-20 14:08:43 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:127) - Ошибка SQL запроса в uploadDataIntoQueue(1): org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (?????: ???????????? "defautlLogin" ?? ?????? ???????? ??????????? (?? ??????))
-INFO  2024-05-20 14:08:43 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:92) - Потоки запросов завершены
-INFO  2024-05-20 14:08:43 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:46) - Поступила команда: закончить чтение из очереди
-INFO  2024-05-20 14:08:43 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:49) - Выгрузка в файл report.csv завершена.
-INFO  2024-05-20 14:08:43 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:50) - Выгружено записей: 0
-DEBUG 2024-05-20 14:08:43 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:51) - Время работы программы: 2
-INFO  2024-05-20 14:09:44 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:149) - Настройки загружены из файла: db-upploader.properties.xml
-INFO  2024-05-20 14:09:44 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:33) - Старт выгрузки в файл отчета: report.csv
-INFO  2024-05-20 14:09:50 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - Потоком 1 залито записей: 500000
-INFO  2024-05-20 14:09:50 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:92) - Потоки запросов завершены
-INFO  2024-05-20 14:09:51 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:46) - Поступила команда: закончить чтение из очереди
-INFO  2024-05-20 14:09:51 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:49) - Выгрузка в файл report.csv завершена.
-INFO  2024-05-20 14:09:51 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:50) - Выгружено записей: 500001
-DEBUG 2024-05-20 14:09:51 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:51) - Время работы программы: 8
-INFO  2024-05-20 14:10:22 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:149) - Настройки загружены из файла: db-upploader.properties.xml
-INFO  2024-05-20 14:10:22 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:33) - Старт выгрузки в файл отчета: report.csv
-INFO  2024-05-20 14:10:28 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - Потоком 1 залито записей: 125000
-INFO  2024-05-20 14:10:29 [pool-2-thread-3] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - Потоком 3 залито записей: 125000
-INFO  2024-05-20 14:10:29 [pool-2-thread-2] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - Потоком 2 залито записей: 125000
-INFO  2024-05-20 14:10:29 [pool-2-thread-4] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:124) - Потоком 4 залито записей: 125000
-INFO  2024-05-20 14:10:29 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:92) - Потоки запросов завершены
-INFO  2024-05-20 14:10:30 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:46) - Поступила команда: закончить чтение из очереди
-INFO  2024-05-20 14:10:30 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:49) - Выгрузка в файл report.csv завершена.
-INFO  2024-05-20 14:10:30 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:50) - Выгружено записей: 500001
-DEBUG 2024-05-20 14:10:30 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:51) - Время работы программы: 10
+INFO  2024-05-20 18:52:40 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:157) - РќР°СЃС‚СЂРѕР№РєРё Р·Р°РіСЂСѓР¶РµРЅС‹ РёР· С„Р°Р№Р»Р°: db-upploader.properties.xml
+INFO  2024-05-20 18:52:40 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:27) - РЎС‚Р°СЂС‚ РІС‹РіСЂСѓР·РєРё РІ С„Р°Р№Р» РѕС‚С‡РµС‚Р°: report.csv
+INFO  2024-05-20 18:52:44 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 1 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 500000
+INFO  2024-05-20 18:52:44 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:82) - РџРѕС‚РѕРєРё Р·Р°РїСЂРѕСЃРѕРІ Р·Р°РІРµСЂС€РµРЅС‹
+DEBUG 2024-05-20 18:52:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:40) - РџРѕСЃС‚СѓРїРёР»Р° РєРѕРјР°РЅРґР°: Р·Р°РєРѕРЅС‡РёС‚СЊ С‡С‚РµРЅРёРµ РёР· РѕС‡РµСЂРµРґРё
+INFO  2024-05-20 18:52:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:43) - Р’С‹РіСЂСѓР·РєР° РІ С„Р°Р№Р» report.csv Р·Р°РІРµСЂС€РµРЅР°.
+INFO  2024-05-20 18:52:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:44) - Р’С‹РіСЂСѓР¶РµРЅРѕ Р·Р°РїРёСЃРµР№: 500001
+DEBUG 2024-05-20 18:52:46 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:45) - Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹: 6
+INFO  2024-05-20 18:53:08 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:157) - РќР°СЃС‚СЂРѕР№РєРё Р·Р°РіСЂСѓР¶РµРЅС‹ РёР· С„Р°Р№Р»Р°: db-upploader.properties.xml
+INFO  2024-05-20 18:53:08 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:27) - РЎС‚Р°СЂС‚ РІС‹РіСЂСѓР·РєРё РІ С„Р°Р№Р» РѕС‚С‡РµС‚Р°: report.csv
+INFO  2024-05-20 18:53:11 [pool-2-thread-2] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 2 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
+INFO  2024-05-20 18:53:12 [pool-2-thread-3] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 3 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
+INFO  2024-05-20 18:53:12 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 1 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
+INFO  2024-05-20 18:53:12 [pool-2-thread-4] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 4 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 125000
+INFO  2024-05-20 18:53:12 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:82) - РџРѕС‚РѕРєРё Р·Р°РїСЂРѕСЃРѕРІ Р·Р°РІРµСЂС€РµРЅС‹
+DEBUG 2024-05-20 18:53:14 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:40) - РџРѕСЃС‚СѓРїРёР»Р° РєРѕРјР°РЅРґР°: Р·Р°РєРѕРЅС‡РёС‚СЊ С‡С‚РµРЅРёРµ РёР· РѕС‡РµСЂРµРґРё
+INFO  2024-05-20 18:53:14 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:43) - Р’С‹РіСЂСѓР·РєР° РІ С„Р°Р№Р» report.csv Р·Р°РІРµСЂС€РµРЅР°.
+INFO  2024-05-20 18:53:14 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:44) - Р’С‹РіСЂСѓР¶РµРЅРѕ Р·Р°РїРёСЃРµР№: 500001
+DEBUG 2024-05-20 18:53:14 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:45) - Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹: 6
+INFO  2024-05-20 19:04:20 [main] ru.otus.java.basic.tegneryadnov.coursework.AppSettings (AppSettings.java:157) - РќР°СЃС‚СЂРѕР№РєРё Р·Р°РіСЂСѓР¶РµРЅС‹ РёР· С„Р°Р№Р»Р°: db-upploader.properties.xml
+INFO  2024-05-20 19:04:20 [main] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:27) - РЎС‚Р°СЂС‚ РІС‹РіСЂСѓР·РєРё РІ С„Р°Р№Р» РѕС‚С‡РµС‚Р°: report.csv
+INFO  2024-05-20 19:04:24 [pool-2-thread-1] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 1 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 250000
+INFO  2024-05-20 19:04:24 [pool-2-thread-2] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:117) - РџРѕС‚РѕРєРѕРј 2 Р·Р°Р»РёС‚Рѕ Р·Р°РїРёСЃРµР№: 250000
+INFO  2024-05-20 19:04:24 [main] ru.otus.java.basic.tegneryadnov.coursework.DataProducer (DataProducer.java:82) - РџРѕС‚РѕРєРё Р·Р°РїСЂРѕСЃРѕРІ Р·Р°РІРµСЂС€РµРЅС‹
+DEBUG 2024-05-20 19:04:26 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:40) - РџРѕСЃС‚СѓРїРёР»Р° РєРѕРјР°РЅРґР°: Р·Р°РєРѕРЅС‡РёС‚СЊ С‡С‚РµРЅРёРµ РёР· РѕС‡РµСЂРµРґРё
+INFO  2024-05-20 19:04:26 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:43) - Р’С‹РіСЂСѓР·РєР° РІ С„Р°Р№Р» report.csv Р·Р°РІРµСЂС€РµРЅР°.
+INFO  2024-05-20 19:04:26 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:44) - Р’С‹РіСЂСѓР¶РµРЅРѕ Р·Р°РїРёСЃРµР№: 500001
+DEBUG 2024-05-20 19:04:26 [Thread-0] ru.otus.java.basic.tegneryadnov.coursework.Consumer (Consumer.java:45) - Р’СЂРµРјСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹: 6

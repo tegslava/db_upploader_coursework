@@ -4,10 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+
+import static ru.otus.java.basic.tegneryadnov.coursework.MainApp.rowsQueue;
 
 /**
  * Класс для запуска потоков с параллельными запросами к БД.
@@ -17,31 +18,21 @@ import java.util.concurrent.TimeUnit;
  * сигнал читателю очереди окончить работу
  */
 public class DataProducer {
-    private final AppSettings appSettings;
-    private final BlockingQueue<String> rowsQueue;
     private final ExecutorService services;
-    private boolean headerChecked = false;
-    private final String POISON_PILL;
-    private final String COLUMN_SEPARATOR;
-    private final String SQL;
-    private final int THREADS_COUNT;
-    private final String WITH_HEADER;
+    private boolean headerChecked;
+    private final String columnSeparator;
+    private final static String POISON_PILL = "POISON_PILL";
     private static final Logger logger = LogManager.getLogger(DataProducer.class.getName());
 
-    public DataProducer(BlockingQueue<String> rowsQueue, AppSettings appSettings) {
-        this.rowsQueue = rowsQueue;
-        this.appSettings = appSettings;
-        POISON_PILL = appSettings.getString("poisonPill", "unknownPoisonPill");
-        COLUMN_SEPARATOR = appSettings.getString("reportColumnSeparator", ";");
-        SQL = appSettings.getString("sql", "");
-        THREADS_COUNT = appSettings.getInt("threadsCount");
-        WITH_HEADER = appSettings.getString("reportWithHeader", "Y");
-        services = Executors.newFixedThreadPool(THREADS_COUNT);
+    public DataProducer() {
+        columnSeparator = AppSettings.getString("COLUMN_SEPARATOR");
+        services = Executors.newFixedThreadPool(AppSettings.getInt("THREADS_COUNT"));
     }
 
     private void sendCommandStopConsumer() {
         try {
             rowsQueue.put(POISON_PILL);
+            logger.debug("Отправил POISON_PILL");
         } catch (InterruptedException e) {
             logger.error(String.format("Ошибка отправки POISON_PILL %s", e));
             throw new RuntimeException(e);
@@ -62,7 +53,7 @@ public class DataProducer {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 1; i <= rsmd.getColumnCount(); i++) {
             stringBuilder.append(rsmd.getColumnName(i))
-                    .append(i < rsmd.getColumnCount() ? COLUMN_SEPARATOR : "");
+                    .append(i < rsmd.getColumnCount() ? AppSettings.getString("COLUMN_SEPARATOR") : "");
         }
         return stringBuilder.toString();
     }
@@ -74,7 +65,7 @@ public class DataProducer {
      */
     public void execute() {
         try {
-            for (int i = 1; i <= THREADS_COUNT; i++) {
+            for (int i = 1; i <= AppSettings.getInt("THREADS_COUNT"); i++) {
                 int threadNumber = i;
                 services.execute(() -> uploadDataIntoQueue(threadNumber));
             }
@@ -85,7 +76,6 @@ public class DataProducer {
                     services.awaitTermination(30, TimeUnit.MINUTES);
                 } catch (InterruptedException e) {
                     logger.error(String.format("Ошибка закрытия пула потоков вычислений: %s", e));
-                    //throw new RuntimeException(e);
                 } finally {
                     sendCommandStopConsumer();
                 }
@@ -102,10 +92,10 @@ public class DataProducer {
      * @param threadNumber номер потока
      */
     private void uploadDataIntoQueue(int threadNumber) {
-        try (Connection connection = DBCPDataSource.getConnection(appSettings);
-             PreparedStatement ps = connection.prepareStatement(SQL)) {
+        try (Connection connection = DBCPDataSource.getConnection();
+             PreparedStatement ps = connection.prepareStatement(AppSettings.getString("SQL"))) {
             int recordCounter = 0;
-            ps.setInt(1, THREADS_COUNT);
+            ps.setInt(1, AppSettings.getInt("THREADS_COUNT"));
             ps.setInt(2, threadNumber - 1);
             try (ResultSet resultSet = ps.executeQuery()) {
                 StringBuilder stringBuilder = new StringBuilder();
@@ -120,6 +110,9 @@ public class DataProducer {
                     }
                     processRow(resultSetMetaData, stringBuilder, resultSet);
                     recordCounter++;
+                    if(recordCounter%5_000==0){
+                        logger.debug(recordCounter);
+                    }
                 }
                 logger.info(String.format("Потоком %d залито записей: %d", threadNumber, recordCounter));
             }
@@ -136,12 +129,12 @@ public class DataProducer {
      * @param rsmd ResultSetMetaData записи
      * @param sb   StringBuilder
      * @param rs   ResultSet
-     * @throws SQLException проблемы с разбором струткуры ResultSetMetaData
+     * @throws SQLException проблемы с разбором структуры ResultSetMetaData
      */
     private void processRow(ResultSetMetaData rsmd, StringBuilder sb, ResultSet rs) throws SQLException {
         for (int i = 1; i <= rsmd.getColumnCount(); i++) {
             sb.append(rs.getString(i))
-                    .append(i < rsmd.getColumnCount() ? COLUMN_SEPARATOR : "");
+                    .append(i < rsmd.getColumnCount() ? columnSeparator : "");
         }
         try {
             rowsQueue.put(sb.toString());
@@ -156,13 +149,13 @@ public class DataProducer {
      * Если проверки не было и требуется шапка отчета WITH_HEADER == true, получает шапку, заливает в очередь
      *
      * @param rsmd ResultSetMetaData
-     * @throws SQLException проблемы с разбором струткуры ResultSetMetaData
+     * @throws SQLException проблемы с разбором структуры ResultSetMetaData
      */
     private synchronized void processHeader(ResultSetMetaData rsmd) throws SQLException {
         if (headerChecked) {
             return;
         }
-        if (WITH_HEADER.equals("Y")) {
+        if (AppSettings.getString("WITH_HEADER").equals("Y")) {
             String header = getHeader(rsmd);
             try {
                 rowsQueue.put(header);
